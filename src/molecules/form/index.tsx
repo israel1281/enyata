@@ -35,23 +35,25 @@ export default function Form() {
             </button>
           </div>
 
-          <div className="text-sm mt-2">
-            <a
-              href="https://tailwindui.com/components/application-ui/forms/sign-in-forms#"
-              className="ml-32 font-medium text-indigo-600 hover:text-indigo-500"
+          <div className="text-sm mt-2 w-full flex justify-center items-center">
+            <Link
+              to="/"
+              className="flex items-center jutsify-center font-medium text-indigo-600 hover:text-indigo-500"
             >
               Forgot your password?
-            </a>
+            </Link>
           </div>
 
-          <div className="flex ml-20 space-x-2 text-sm mt-16">
-            <a href="#" className="font-medium underline">
-              Privacy Policy
-            </a>
-            <h5 className="text-gray-300">and</h5>
-            <a href="#" className="font-medium underline">
-              Terms of services
-            </a>
+          <div className="flex w-full h-20 mb-0 justify-center text-sm mt-16">
+            <div className="mt-10 flex space-x-2">
+              <Link to="/" className="font-medium underline">
+                Privacy Policy
+              </Link>
+              <h5 className="text-gray-300">and</h5>
+              <Link to="/" className="font-medium underline">
+                Terms of services
+              </Link>
+            </div>
           </div>
         </form>
       </div>
