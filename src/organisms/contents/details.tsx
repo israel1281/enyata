@@ -1,8 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import FilmsImg from "../../assets/films.svg";
+import PeopleImg from "../../assets/people.jpg";
+import SpaceshipsImg from "../../assets/spaceships.png";
+import SpeciesImg from "../../assets/species.png";
 import { DataContext } from "../../DataProvider";
 import { getAPI } from "../../utils/fetchData";
-import Logo from "../../atoms/logo";
 
 export default function Details() {
   const { id, name } = useParams();
@@ -28,11 +31,16 @@ export default function Details() {
     <main className="flex-1 relative overflow-y-auto focus:outline-none">
       <div className="py-6 max-w-7xl mx-auto px-2 sm:px-6 lg:px-4">
         <div className="flex flex-wrap w-full gap-4">
-          <img
-            className="h-60 w-60 rounded"
-            src="https://joeschmoe.io/api/v1/random"
-            alt=""
-          />
+          {name === "films" ? (
+            <img className="h-60 w-68 rounded" src={FilmsImg} alt="" />
+          ) : name === "people" ? (
+            <img className="h-60 w-68 rounded" src={PeopleImg} alt="" />
+          ) : name === "starships" ? (
+            <img className="h-60 w-68 rounded" src={SpaceshipsImg} alt="" />
+          ) : name === "species" ? (
+            <img className="h-60 w-68 rounded" src={SpeciesImg} alt="" />
+          ) : null}
+
           {name === "films" ? (
             <div className="flex-col">
               <h4 className="text-[48px] font-[700]">{details.title}</h4>
