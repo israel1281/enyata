@@ -32,13 +32,13 @@ export default function Details() {
       <div className="py-6 max-w-7xl mx-auto px-2 sm:px-6 lg:px-4">
         <div className="flex flex-wrap w-full gap-4">
           {name === "films" ? (
-            <img className="h-60 w-60 rounded" src={FilmsImg} alt="" />
+            <img className="h-60 w-68 rounded" src={FilmsImg} alt="" />
           ) : name === "people" ? (
-            <img className="h-60 w-60 rounded" src={PeopleImg} alt="" />
+            <img className="h-60 w-68 rounded" src={PeopleImg} alt="" />
           ) : name === "starships" ? (
-            <img className="h-60 w-60 rounded" src={SpaceshipsImg} alt="" />
+            <img className="h-60 w-68 rounded" src={SpaceshipsImg} alt="" />
           ) : name === "species" ? (
-            <img className="h-60 w-60 rounded" src={SpeciesImg} alt="" />
+            <img className="h-60 w-68 rounded" src={SpeciesImg} alt="" />
           ) : null}
 
           {name === "films" ? (
