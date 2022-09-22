@@ -27,7 +27,7 @@ export default function Header() {
         </div>
 
         <div className="ml-4 flex items-center md:ml-6">
-          <button className="bg-slate-900 p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+          <button className=" p-1 rounded-full text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span className="sr-only">View notifications</span>
             <svg
               className="h-6 w-6"
@@ -50,7 +50,7 @@ export default function Header() {
             <div>
               <button
                 type="button"
-                className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                className="max-w-xs bg-white flex items-center text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 gap-4"
                 id="user-menu-button"
               >
                 <span className="sr-only">Open user menu</span>
@@ -59,6 +59,7 @@ export default function Header() {
                   src="https://joeschmoe.io/api/v1/random"
                   alt=""
                 />
+                <span className="text-sm text-gray-900">John Doe</span>
               </button>
             </div>
 
