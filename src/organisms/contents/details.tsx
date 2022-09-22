@@ -35,7 +35,7 @@ export default function Details() {
             <img className="h-60 w-60 rounded" src={FilmsImg} alt="" />
           ) : name === "people" ? (
             <img className="h-60 w-60 rounded" src={PeopleImg} alt="" />
-          ) : name === "spaceships" ? (
+          ) : name === "starships" ? (
             <img className="h-60 w-60 rounded" src={SpaceshipsImg} alt="" />
           ) : name === "species" ? (
             <img className="h-60 w-60 rounded" src={SpeciesImg} alt="" />
