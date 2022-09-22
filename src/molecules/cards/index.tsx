@@ -3,19 +3,19 @@ import React from "react";
 const data = [
   {
     title: "Films",
-    color: "green",
+    color: "#a9ffe0",
   },
   {
     title: "Starship",
-    color: "green",
+    color: "#a9c1ff",
   },
   {
     title: "People",
-    color: "green",
+    color: "#ffa9ec",
   },
   {
     title: "Species",
-    color: "green",
+    color: "#fdffa9",
   },
 ];
 
@@ -33,9 +33,11 @@ export default function Cards() {
                 <span className="absolute inset-0" aria-hidden="true"></span>
                 <p className="text-sm flex justify-between font-medium text-gray-900">
                   {item.title}{" "}
-                  <span className="w-6 h-6 rounded bg-blue-300 mr-3"></span>
+                  <span
+                    className={`w-6 h-6 rounded bg-[${item.color}] mr-3`}
+                  ></span>
                 </p>
-                <p className="text-sm font-medium text-gray-900 mt-10">350</p>
+                <p className="text-sm font-medium text-gray-900 mt-10">200</p>
                 <p className="text-sm text-green-500 truncate">
                   20 More than yesterday
                 </p>
