@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Nav() {
   return (
     <div className="flex-1 flex flex-col overflow-y-auto">
-      <nav className="flex-1 px-6 py-2 bg-black space-y-1">
+      <nav className="flex-1 px-6 py-2 bg-[#031434] space-y-1">
         <Link
           to="/dashboard"
           className="bg-gray-900 text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md mb-16"
@@ -22,31 +22,31 @@ export default function Nav() {
               fill="white"
             />
           </svg>
-          Dashboard
+          Overview
         </Link>
 
         <Link
-          to="/dashboard/all-accounts"
+          to="/dashboard/starships"
           className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md mt-32"
         >
           <span className="w-3 h-3 rounded bg-blue-300 mr-3"></span>
-          Account
+          Starships
         </Link>
 
         <Link
-          to="/dashboard/cards"
+          to="/dashboard/people"
           className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
         >
-          <span className="w-3 h-3 rounded bg-blue-300 mr-3"></span>
-          Card
+          <span className="w-3 h-3 rounded bg-[#FFA9EC] mr-3"></span>
+          People
         </Link>
 
         <Link
-          to="/dashboard/users"
+          to="/dashboard/species"
           className="text-gray-300 hover:bg-gray-700 hover:text-white group flex items-center px-2 py-2 text-sm font-medium rounded-md"
         >
-          <span className="w-3 h-3 rounded bg-blue-300 mr-3"></span>
-          Users
+          <span className="w-3 h-3 rounded bg-[#FDFFA9] mr-3"></span>
+          Species
         </Link>
       </nav>
     </div>

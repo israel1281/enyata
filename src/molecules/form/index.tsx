@@ -1,12 +1,59 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Input from "../../atoms/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { validateEmail } from "../../utils/Validate";
 
 export default function Form() {
+  const initialState = {
+    email: "",
+    password: "",
+  };
+  const [emailErr, setEmailErr] = useState("");
+  const [emailError, setEmailError] = useState<boolean>(false);
+  const [passwordErr, setPasswordErr] = useState<string>("");
+  const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [userData, setUserData] = useState(initialState);
+
+  const { email, password } = userData;
+  const navigate = useNavigate();
+
+  const uppercaseRegExp = /(?=.*?[A-Z])/;
+  const lowercaseRegExp = /(?=.*?[a-zA-Z])/;
+  const digitsRegExp = /(?=.*?[0-9])/;
+  const uppercasePassword = uppercaseRegExp.test(password);
+  const lowercasePassword = lowercaseRegExp.test(password);
+  const digitsPassword = digitsRegExp.test(password);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { value, name } = e.target;
+    if (
+      value.length < 8 ||
+      !uppercasePassword ||
+      !lowercasePassword ||
+      !digitsPassword
+    ) {
+      setPasswordErr(
+        "Password must contain at least one Uppercase letter,Lowercase letter and number"
+      );
+      setPasswordError(true);
+    } else {
+      setPasswordErr("");
+      setPasswordError(false);
+    }
+    setUserData({ ...userData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!passwordErr) {
+      navigate("/dashboard");
+    }
+  };
+
   return (
     <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
       <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="mb-16">
             <h3 className="font-semibold text-xl mb-1">Login</h3>
             <h5 className="font-llight text-sm">
@@ -16,13 +63,29 @@ export default function Form() {
 
           <div className="mt-8">
             <div className="mt-1">
-              <Input label="email" type="email" />
+              <Input
+                error={emailError}
+                label="email"
+                type="email"
+                name="email"
+                value={email}
+                onChange={handleChange}
+                helperText={emailErr}
+              />
             </div>
           </div>
 
           <div>
             <div className="mt-1">
-              <Input label="password" type="password" />
+              <Input
+                error={passwordError}
+                label="password"
+                type="password"
+                name="password"
+                value={password}
+                onChange={handleChange}
+                helperText={passwordErr}
+              />
             </div>
           </div>
 
